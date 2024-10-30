@@ -1,0 +1,210 @@
+﻿@model BE.Product
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section preHome{
+
+    <link href="~/assets/css/Products.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+}
+<div class="w3-container">
+
+
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container ">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <h2>با تشکر از انتخاب شما</h2>
+            </header>
+            <div class="w3-container">
+                <p>این محصول به اتمام رسیده است.</p>
+             
+            </div>
+            <footer class="w3-container ">
+                <a  class="add-to-cart btn btn-primary" href="#">
+                    @* onclick="AddToCart(event);" *@
+                    <span class="text text-2" aria-hidden="true">با ما تماس بگیرید</span>
+                </a>
+            </footer>
+        </div>
+    </div>
+</div>
+<section class="sec-food">
+
+    <div class="pop-up-container-vertical">
+       <div class="pop-up-wrapper">
+           <a href="/">
+            <div class="go-back">
+                <i class="fa fa-arrow-left" style="left:40px; position: relative; height: 35px;  width: 40px;  font-weight: 900; bottom: 60px;color: #191919;"></i>
+            </div>
+           </a>
+            <div class="product-details">
+                <div class="product-left">
+                    <div class="product-info">
+                        <div class="product-manufacturer">
+                           AirPak
+                        </div>
+                        <div class="product-title">
+                           @Model.Header
+                        </div>
+                        <div class="product-price" price-data="@Model.Price">
+                            تومان
+                            @Model.Price
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <img src="@Model.Photo">
+                    </div>
+                </div>
+                <div class="product-right">
+                    <div class="product-description">
+                        کیفیت هوای داخل خانه را در کمترین زمان ممکن بهبود بخشید. این صندلی‌ها هوای پاک و سالم را مستقیماً به منطقه تنفسی شما می‌رسانند.
+                    </div>
+                    @* <div class="product-available">
+                    <span class="product-extended"><a href="#">Buy Extended Warranty</a></span>
+                    </div> *@
+                    <div class="product-rating">
+                        <i class="fa fa-star rating" star-data="1"></i>
+                        <i class="fa fa-star rating" star-data="2"></i>
+                        <i class="fa fa-star rating" star-data="3"></i>
+                        <i class="fa fa-star" star-data="4"></i>
+                        <i class="fa fa-star" star-data="5"></i>
+                        <div class="product-rating-details">(3.1 - <span class="rating-count">1203</span> reviews)
+                        </div>
+
+                        @* <div class="product-rating-details">
+                        (3.1 - <span class="rating-count">1203</span> reviews)
+                        </div> *@
+
+                    </div>
+                    <div class="product-quantity">
+
+                        <div class="product-quantity-subtract">
+                            <i class="fa fa-chevron-left" style="color:var(--gold-crayola);"></i>
+                        </div>
+                        <div>
+                            <input type="text" id="product-quantity-input" placeholder="1" value="1" >
+                        </div>
+                        <div class="product-quantity-add">
+                            <i class="fa fa-chevron-right" style="color:var(--gold-crayola);"></i>
+                        </div>
+                        <label for="product-quantity-input" class="product-quantity-label">:تعداد</label>
+                    </div>
+                </div>
+                <div class="product-bottom">
+                    <div class="product-checkout">
+                        هزینه این سفارش
+                        <div class="product-checkout-total">
+                            تومان
+                            <div class="product-checkout-total-amount">@Model.Price </div>
+                        </div>
+                    </div>
+                    <div class="product-checkout-actions">
+                        <a onclick="document.getElementById('id01').style.display='block'" class="add-to-cart btn btn-primary" href="#"> @* onclick="AddToCart(event);" *@
+                            <span class="text text-2" aria-hidden="true">افزودن  سفارش</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script>
+        //Go Back
+        function OpenProduct(i) {
+            var i = $('.product-image[item-data="' + i + '"] img');
+            var lbi = $('.lightbox-blanket .product-image img');
+            console.log($(i).attr("src"));
+            $(lbi).attr("src", $(i).attr("src"));
+            $(".lightbox-blanket").toggle();
+
+            $("#product-quantity-input").val("0");
+            CalcPrice(0);
+
+        }
+
+
+        //Calculate new total when the quantity changes.
+            function CalcPrice(qty) {
+                var price = parseFloat($(".product-price").attr("price-data"));
+                var total = (price * qty).toFixed(0); // یک رقم اعشاری بدون گرد کردن
+                $(".product-checkout-total-amount").text(total);
+            }
+
+
+
+        //Reduce quantity by 1 if clicked
+        $(document).on("click", ".product-quantity-subtract", function (e) {
+            var value = $("#product-quantity-input").val();
+            //console.log(value);
+            var newValue = parseInt(value) - 1;
+            if (newValue < 0) newValue = 0;
+            $("#product-quantity-input").val(newValue);
+            CalcPrice(newValue);
+        });
+
+        //Increase quantity by 1 if clicked
+        $(document).on("click", ".product-quantity-add", function (e) {
+            var value = $("#product-quantity-input").val();
+            //console.log(value);
+            var newValue = parseInt(value) + 1;
+            $("#product-quantity-input").val(newValue);
+            CalcPrice(newValue);
+        });
+
+        $(document).on("blur", "#product-quantity-input", function (e) {
+            var value = $("#product-quantity-input").val();
+            //console.log(value);
+            CalcPrice(value);
+        });
+
+
+        function AddToCart(e) {
+            e.preventDefault();
+            var qty = $("#product-quantity-input").val();
+            if (qty === '0') { return; }
+                var toast = '<div class="toast toast-success"> .مورد اضافه شد' + qty + ' </div>';
+            $("body").append(toast);
+            setTimeout(function () {
+                $(".toast").addClass("toast-transition");
+            }, 100);
+            setTimeout(function () {
+                $(".toast").remove();
+            }, 3500);
+        }
+
+
+    //     //کلیک
+    //     <script>
+    //         $(document).ready(function () {
+    //             $.ajax({
+    //                 url: '@Url.Action("IncrementViews", "ProductController")',
+    //                 type: 'POST',
+    //                 data: { id: 1 },
+    //                 success: function (response) {
+    //                     console.log('Request sent successfully!');
+    //                 },
+    //                 error: function () {
+    //                     console.log('An error occurred while sending the request!');
+    //                 }
+    //             });
+    //         });
+    </script> 
+}

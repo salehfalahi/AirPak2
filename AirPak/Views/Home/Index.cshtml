@@ -1,0 +1,757 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!-- Main Search Start -->
+<div class="main-search-active">
+    <div class="sidebar-search-icon">
+        <button class="search-close"><i class="fa fa-close"></i></button>
+    </div>
+    <div class="sidebar-search-input">
+        <form action="#">
+            <div class="form-search">
+                <input style="text-align: right;" id="search" class="input-text" value="" placeholder="" type="search">
+                <button>
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </form>
+        <p dir="rtl" lang="fa-IR" class="form-description">برای جستجو Enter را بزنید</p>
+    </div>
+</div>
+<!-- Main Search End -->
+<!-- Slider/Intro Section Start -->
+<div class="intro-slider-wrap section">
+    <div class="intro-slider swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+          
+                <div class="intro-section section overlay" data-bg-image="/assets/images/bg/jpeg-optimizer_IMG_20240627_170200_766_waifu2x_photo_noise1_scale.png">
+
+                    <div class="container">
+                        <div class="row row-cols-lg-1 row-cols-1">
+
+                            <div class="col align-self-center">
+
+                                <div class="intro-content mt-8">
+                                    <h2 class="title">صندلی های هوشمند تصفیه کننده ی هوا</h2>
+                                    <div class="desc">
+                                        <p>ما اهمیت هوای سالم را می‌فهمیم، به همین دلیل ما چندین راه‌حل و محصول تمیز کردن هوا ارائه می‌دهیم. کیفیت بد هوای داخلی می‌تواند منجر به ایجاد انواع مشکلات بهداشتی شود. با سیستم‌های کیفیت هوای ما، هوای خانه یا محیط کار خود را پاک و سالم نگه دارید.</p>
+                                    </div>
+
+                                    @foreach (var product in ViewBag.Products)
+                                    {
+                                        <a asp-action="Index" asp-controller="Product" asp-route-id="@product.Id" class="btn btn-primary btn-hover-secondary">خرید محصول</a>
+                                    }
+                                    <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+@*             <div class="swiper-slide">
+                <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/pexels-freestockpro-321576.jpg">
+
+                    <div class="container">
+                        <div class="row row-cols-lg-1 row-cols-1">
+
+                            <div class="col align-self-center">
+
+                                <div class="intro-content mt-8">
+                                    <h2 class="title">بهترین سیستم‌های کیفیت هوای داخلی</h2>
+                                    <div class="desc">
+                                        <p>ما اهمیت هوای سالم را می‌فهمیم، به همین دلیل ما چندین راه‌حل و محصول تمیز کردن هوا ارائه می‌دهیم. کیفیت بد هوای داخلی می‌تواند منجر به ایجاد انواع مشکلات بهداشتی شود. با سیستم‌های کیفیت هوای ما، هوای خانه یا محیط کار خود را پاک و سالم نگه دارید.</p>
+                                    </div>
+                                    <a href="course-details-free.html" class="btn btn-primary btn-hover-secondary">شروع کنید</a>
+                                    <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/hero-2.jpg">
+
+                    <div class="container">
+                        <div class="row row-cols-lg-1 row-cols-1">
+
+                            <!-- Intro One Content Start -->
+                            <div class="col align-self-center">
+                                <div class="intro-content mt-8">
+                                    <h2 class="title">کیفیت هوای داخلی و راحتی واقعی</h2>
+                                    <div class="desc">
+                                        <p>در دنیای پیچیده امروز، آلرژن‌ها و هوای داخلی غیرایمن مشکلات واقعی برای صاحبان خانه‌ها و کسب‌وکارها هستند. Air Pure Innovations با استفاده از تکنولوژی‌های پیشرفته، سیستم‌هایی را ارائه می‌دهد که هوا را تصفیه کرده و آلاینده‌ها را کاهش می‌دهد، تا هوایی پاک و سالم برای شما فراهم کند.</p>
+                                    </div>
+                                    <a href="course-details-free.html" class="btn btn-primary btn-hover-secondary">شروع کنید</a>
+                                    <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
+                                </div>
+
+                            </div>
+                            <!-- Intro One Content End -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/pexels-kelvin809-810775.jpg">
+
+                    <div class="container">
+                        <div class="row row-cols-lg-1 row-cols-1">
+
+                            <!-- Intro One Content Start -->
+                            <div class="col align-self-center max-mb-30">
+                                <div class="intro-content mt-8">
+                                    <h2 class="title">زندگی سالم با هوای پاک</h2>
+                                    <div class="desc">
+                                        <p>تصور کنید هر بار که نفس می‌کشید، هوای تازه و پاکی را استنشاق می‌کنید. با سیستم‌های تصفیه هوای ما، این رویا به واقعیت تبدیل می‌شود. بیایید با هم هوایی سالم و پاک برای خانه و محل کارتان فراهم کنیم.</p>
+                                    </div>
+                                    <a href="course-details-free.html" class="btn btn-primary btn-hover-secondary">شروع کنید</a>
+                                    <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
+                                </div>
+
+                            </div>
+                            <!-- Intro One Content End -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    *@     </div>
+      
+    </div>
+</div>
+<!-- Slider/Intro Section End -->
+<!-- About Section Start -->
+<div class="section section-padding-t90 section-padding-bottom-190">
+    <div class="container">
+
+
+
+        <!-- Section Title End -->
+        <!-- About Wrapper Start -->
+        <div class="row">
+
+            <!-- About Image Area Start -->
+            <div class="col-xl-7 col-lg-6 col-12" data-aos="fade-up">
+                <div class="about-image-area">
+                    <div class="about-image js-tilt">
+                        <img style="width:370px;height: 370px;  object-fit: cover;" src="assets/images/about/IMG_20240627_170200_952.jpg" alt="">
+                    </div>
+                    <div class="about-image js-tilt">
+                        <img style="width:370px;height: 370px;  object-fit: cover;" src="assets/images/about/jpeg-optimizer_pexels-pixabay-531756.jpg" alt="">
+                    </div>
+                    <!-- Animation Shape Start -->
+                    <div class="shape shape-1 scene">
+                        <span data-depth="1">
+                            <img src="/assets/images/shape-animation/about-shape-1.png"
+                                 alt="">
+                        </span>
+                    </div>
+                    <!-- Animation Shape End -->
+                </div>
+            </div>
+            <!-- About Image Area Start -->
+            <!-- About Start -->
+            <div class="col-xl-5 col-lg-6 col-12" data-aos="fade-up">
+                <!-- About Content Area Start -->
+                <div class="about-content-area">
+                    <!-- Section Title Two Start -->
+                    <div class="section-title-two">
+                        <span class="sub-title">آیا از آسم  رنج می برید؟</span>
+                        <h4>کیفیت هوای داخل خانه در سریعترین زمان در منطقه ی تنفسی شما را بهبود می بخشد</h4>
+                    </div>
+                    <!-- Section Title Two End -->
+
+                    <p>
+                        <br>آیا به آلرژن ها حساسیت دارید؟
+                        <br>آیا از دود سیگار  هم اتاقی خود رنج میبرید؟<br>
+                        کیفیت پایین هوای داخل خانه می تواند منجر به تعدادی از مشکلات سلامتی مانند آسم و آلرژی های مداوم شود. بسیاری از مردم روزانه این مسائل را تجربه می کنند اما نمی دانند که این مشکلات مربوط به کیفیت پایین هوای داخل خانه است. ما  اهمیت هوای سالم را می دانیم ، به همین دلیل است که ما چندین راه حل و محصول اثبات شده هوای پاک را ارائه می دهیم.
+                    </p>
+
+                    <a class="btn btn-primary btn-hover-secondary mt-xl-12 mt-lg-8 mt-md-6 mt-4" href="#">درباره ما</a>
+                </div>
+
+                <!-- About Content Area Start -->
+            </div>
+            <!-- About Start -->
+
+        </div>
+        <!-- About Wrapper End -->
+
+    </div>
+</div>
+<!-- About Section End -->
+<!-- Skill With Video Section Start -->
+<div class="section section-padding" data-bg-color="#f8faff">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-xl-5 col-lg-6 col-12" data-aos="fade-up">
+                <!-- Skill With Video Content Start -->
+                <div class="skill-with-video-content">
+                    <!-- Section Title Two Start -->
+
+                    <div class="section-title-two mb-8">
+                        <span class="sub-title">توسعه‌ای که موثر است و نتیجه می‌دهد</span>
+                        <h3 class="title">ما ابزارها و مهارت‌هایی که شرکت شما نیاز دارد را ارائه می‌دهیم</h3>
+                    </div>
+
+                    <!-- Section Title Two End -->
+                    <!-- Agency List Start -->
+                    <ul dir="rtl" lang="fa-IR" class="agency-list">
+                        <li class="item">
+                            <div class="icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="text">نگهداری مداوم از سیستم‌های کیفیت هوای داخلی</div>
+                        </li>
+                        <li class="item">
+                            <div class="icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="text">نصب صدها سیستم تصفیه هوا در خانه‌ها و شرکت‌ها</div>
+                        </li>
+                        <li class="item">
+                            <div class="icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="text">مشاوره استراتژیک در بهبود کیفیت هوای داخلی</div>
+                        </li>
+                        <li class="item">
+                            <div class="icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="text">همکاری با تمامی تولیدکنندگان معتبر تجهیزات تصفیه هوا</div>
+                        </li>
+                    </ul>
+
+                    <!-- Agency List End -->
+                </div>
+                <!-- Skill With Video Content End -->
+            </div>
+
+            <div class="offset-xl-1 col-xl-6 col-lg-6 col-12" data-aos="fade-up">
+                <!-- Skill With Video Popup Start -->
+                <div class="video-popup-area">
+                    <!-- Video Popup Start -->
+                    <div class="skill-video" data-aos="fade-up">
+                        <img class="image" src="/assets/images/video/skill-video.jpg" alt="video popup">
+                        <a href="" class="icon video-popup">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                    <!-- Video Popup End -->
+                    <!-- Animation Shape Start -->
+                    <div class="shape shape-1 scene">
+                        <span data-depth="1">
+                            <img src="/assets/images/shape-animation/video-shape-1.png" alt="">
+                        </span>
+                    </div>
+                    <!-- Animation Shape End -->
+                </div>
+                <!-- Skill With Video Popup End -->
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Skill With Video Section End -->
+<!-- Service Section Start -->
+<div class="section section-padding-t90-b100">
+    <div class="container">
+
+        <!-- Section Title Start -->
+        <div class="section-title text-center mb-12" data-aos="fade-up">
+            <h2 class="title fz-32">ما یک برنامه عملی منحصر به فرد برای بهبود کیفیت هوا ایجاد می‌کنیم</h2>
+            <p style="text-align: center;" class="sub-title">
+                شرکت خود را با استفاده از استراتژی‌های بهبود کیفیت هوای داخلی ما
+                <br> در مسیر درست قرار دهید
+            </p>
+        </div>
+
+        <!-- Section Title End -->
+
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
+
+            <!-- Icon Box Start -->
+            <div class="col mb-6" data-aos="fade-up">
+                <div class="icon-box text-center" data-vivus-hover>
+                    <div class="icon"><img class="svgInject" src="/assets/images/svg/linea/linea-basic-target.svg" alt=""></div>
+                    <div class="content">
+                  
+
+                        <h3 class="title">فیلترهای تصفیه هوا</h3>
+ <div class="desc"> 
+     <p>فیلترهای تصفیه هوا نقش کلیدی در بهبود کیفیت هوای داخلی دارند. انتخاب فیلتر مناسب می‌تواند ذرات معلق، گرد و غبار، و آلاینده‌های موجود در هوا را به طرز مؤثری کاهش دهد. فیلترهای HEPA، کربن فعال و دیگر نوع‌ها، هر کدام ویژگی‌های خاص خود را دارند که باید بر اساس نیازها و شرایط محیطی انتخاب شوند. با نگهداری منظم و تعویض فیلترها، می‌توانید از عملکرد بهینه دستگاه‌های تصفیه هوا اطمینان حاصل کنید.</p>
+  </div>
+                        <a href="#" class="link">بیشتر بدانید</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Icon Box End -->
+            <!-- Icon Box Start -->
+            <div class="col mb-6" data-aos="fade-up">
+
+                <div class="icon-box text-center" data-vivus-hover>
+                    <div class="icon"><img class="svgInject" src="/assets/images/svg/linea/linea-basic-picture-multiple.svg" alt=""></div>
+                    <div class="content">
+                        <h3 class="title">سیستم‌های کیفیت هوای داخلیی</h3>
+                        <div class="desc">
+                            <p>همیشه اطمینان داشته باشید که کیفیت هوای داخلی خانه‌تان تحت نظر است. برای همه‌ی نیازهای نصب و تعمیر سیستم‌های کیفیت هوای داخلی در AirPak، اعتماد به . کنید. با شماره 09909994894 تماس بگیرید. برای اطلاعات بیشتر در مورد تخفیفات و کوپن‌های آنلاین، اینجا را کلیک کنید.</p>
+                        </div>
+                        <a href="#" class="link">بیشتر بدانید</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- Icon Box End -->
+            <!-- Icon Box Start -->
+            <div class="col mb-6" data-aos="fade-up">
+
+                <div class="icon-box text-center" data-vivus-hover>
+                    <div class="icon">
+                        <img class="svgInject"
+                             src="assets/images/svg/linea/linea-basic-life-buoy.svg" alt="">
+                    </div>
+
+                    <div class="content"> 
+                        <h3 class="title">استراتژی تصفیه هوا</h3>
+                        <div class="desc"> <p>بهبود کیفیت هوا در محیط‌های داخلی نه تنها به سلامت انسان‌ها کمک می‌کند، بلکه می‌تواند کیفیت زندگی را افزایش دهد. استفاده از دستگاه‌های تصفیه هوا با فیلترهای مناسب، آلاینده‌ها و ذرات معلق را کاهش می‌دهد و به ایجاد فضایی سالم‌تر کمک می‌کند. آگاهی از روش‌های نگهداری و بهینه‌سازی عملکرد این دستگاه‌ها می‌تواند تأثیر زیادی در کارایی آن‌ها داشته باشد.</p>
+                            </div> 
+                            <a href="#" class="link">بیشتر بدانید</a> 
+                        </div>
+
+                </div>
+
+            </div>
+            <!-- Icon Box End -->
+
+        </div>
+
+    </div>
+</div>
+<!-- Service Section End -->
+<!-- Success Section Start -->
+<div class="section section-padding-top section-padding-bottom-200" data-bg-color="#f8faff">
+    <div class="container">
+        <div class="row">
+            <!-- Success Content Start -->
+            <div class="col-lg-5" data-aos="fade-up">
+                <div class="success-content">
+                    <!-- Section Title Two Start -->
+                    <div class="section-title-two mb-lg-8 mb-6">
+                        <span class="sub-title">موفقیت شما، موفقیت ماست</span>
+                        <h3 class="title">آیا هوای محیط داخلی خانه ی شما نا سالم است ؟ یا در محیط کار ناسالم ، فعالیت می کنید؟</h3>
+                    </div>
+                    <!-- Section Title Two End -->
+
+                    <p class="mb-0">
+                        ما متعهد هستیم که به شما کمک کنیم هوا را از آلودگی‌ها پاک کنید تا بتوانید در خانه خود شاد و سالم زندگی کنید.
+                        فناوری نانو پتانسیل زیادی در ارائه رویکردی نوآورانه در جهت کاهش آلودگی هوا ، آب و زمین ارائه می دهدآ ما این را میدانیم  و از این علم برای افزایش کیفیت هوای داخلی شما  استفاده کردیم تا شما آرامش را به زندگی خود تقدیم کنید
+                        .
+                    </p>
+
+                    <a class="btn btn-primary btn-hover-secondary mt-xl-12 mt-lg-8 mt-md-6 mt-4" href="#">شروع کنید</a>
+                </div>
+
+
+            </div>
+            <!-- Success Content End -->
+            <!-- Success Image Start -->
+            <div class="offset-lg-1 col-lg-6" data-aos="fade-up">
+                <div class="success-image-wrap">
+                    <div class="success-image js-tilt">
+                        <img src="/assets/images/air-quality.jpg" alt="success-1">
+                    </div>
+                    <div class="success-image js-tilt">
+                        <img src="/assets/images/free-uv-special-300x190.jpg" alt="success-1">
+                    </div>
+
+                    <!-- Animation Shape Start -->
+                    <div class="shape shape-1 scene">
+                        <span data-depth="1">
+                            <img src="/assets/images/shape-animation/video-shape-1.png"
+                                 alt="shape">
+                        </span>
+                    </div>
+                    <!-- Animation Shape End -->
+                </div>
+            </div>
+            <!-- Success Image End -->
+        </div>
+    </div>
+</div>
+<!-- Success Section End -->
+<!-- Portfolio Section Start -->
+<div class="section section-padding-t90 ag-masonary-wrapper">
+    <div class="container-fluid px-0">
+        <!-- Section Title Start -->
+        <div class="section-title text-center" data-aos="fade-up">
+            <h2 class="title fz-32">شما سزاوار بهترین ها هستید </h2>
+        </div>
+        <!-- Section Title End -->
+        <!-- Portfolio Menu Start -->
+        <div class="messonry-button text-center mb-lg-13 mb-md-13 mb-6" data-aos="fade-up">
+            <button data-filter="*" class="is-checked"><span class="filter-text">همه</span></button>
+            <button data-filter=".cat-1"><span class="filter-text">خانگی</span></button>
+            <button data-filter=".cat-2"><span class="filter-text">سازمانی</span></button>
+            <button data-filter=".cat-3"><span class="filter-text">همکاری ها</span></button>
+            <button data-filter=".cat-4"><span class="filter-text">شهری</span></button>
+        </div>
+
+        <!-- Portfolio Menu End -->
+
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 g-0 mesonry-list">
+            <div class="resizer col"></div>
+            <!-- Single Portfolio Start -->
+            <div class="col cat-1 cat-3">
+                <div class="single-portfolio">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="/assets/images/filter012122_033.jpg" alt="Portfolio-01">
+                    </div>
+                    <div class="content">
+                        <h5 class="title">
+                            <a href="#">
+                                Project Name #1 <img src="/assets/images/icons/arrow-up-right.svg" alt="">
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-2 cat-5">
+                <div class="single-portfolio">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="/assets/images/IMG_۲۰۲۴۱۰۱۵_۰۱۳۵۲۳.jpg" alt="Portfolio-01">
+                    </div>
+                    <div class="content">
+                        <h5 class="title">
+                            <a href="#">
+                                Project Name #1 <img src="/assets/images/icons/arrow-up-right.svg" alt="">
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-2 cat-5">
+                <div class="single-portfolio">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="/assets/images/IMG_۲۰۲۴۱۰۲۹_۱۸۴۵۵۱.jpg" alt="Portfolio-01">
+                    </div>
+                    <div class="content">
+                        <h5 class="title">
+                            <a href="#">
+                                Project Name #1 <img src="/assets/images/icons/arrow-up-right.svg" alt="">
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-2 cat-5">
+                <div class="single-portfolio">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="/assets/images/IMG_۲۰۲۴۱۰۲۹_۱۸۴۴۴۸.jpg" alt="Portfolio-01">
+                    </div>
+                    <div class="content">
+                        <h5 class="title">
+                            <a href="#">
+                                Project Name #1 <img src="/assets/images/icons/arrow-up-right.svg" alt="">
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-3 cat-2">
+                <div class="single-portfolio">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="/assets/images/IMG_20240711_012126_653.jpg" alt="Portfolio-01">
+                    </div>
+                    <div class="content">
+                        <h5 class="title">
+                            <a href="#">
+                                Project Name #1 <img src="/assets/images/icons/arrow-up-right.svg" alt="">
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-4 cat-3">
+                <div class="single-portfolio">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="/assets/images/IMG_20240627_170200_952.jpg" alt="Portfolio-01">
+                    </div>
+                    <div class="content">
+                        <h5 class="title">
+                            <a href="#">
+                                Project Name #1 <img src="/assets/images/icons/arrow-up-right.svg" alt="">
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+@*             <!-- Single Portfolio Start -->
+            <div class="col cat-5">
+                <div class="single-portfolio">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="" alt="Portfolio-01">
+                    </div>
+                    <div class="content">
+                        <h5 class="title">
+                            <a href="#">
+                                Project Name #1 <img src="assets/images/icons/arrow-up-right.svg" alt="">
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-2">
+                <div class="single-portfolio">
+                    <div class="thumbnail">
+                        <img class="img-fluid" src="" alt="Portfolio-01">
+                    </div>
+                    <div class="content">
+                        <h5 class="title">
+                            <a href="#">
+                                Project Name #1 <img src="assets/images/icons/arrow-up-right.svg" alt="">
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End --> *@
+        </div>
+    </div>
+</div>
+<!-- Portfolio Section End -->
+<!-- Blog Section Start -->@* 
+<div class="section section-padding-t90-b100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4">
+                <div class="section-button text-lg-right text-left mb-md-8 mb-sm-6 mb-6" data-aos="fade-up">
+                    <a href="#" class="btn btn-primary ">بازدید از وبلاگ</a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <!-- Section Title Two Start -->
+                <div class="section-title-two mb-lg-12 mb-md-6" data-aos="fade-up">
+                    <span class="sub-title">آخرین اخبار بازاریابی و بینش‌های مدیریتی</span>
+                    <h3 class="title">تمام آخرین اخبار بازاریابی و جذاب‌ترین آمارها برای بازاریابان را به شما ارائه می‌دهیم</h3>
+                </div>
+
+
+                <!-- Section Title Two End -->
+            </div>
+
+
+        </div>
+
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
+            <div class="col mb-6" data-aos="fade-up">
+                <!-- Single Blog Start -->
+                <div class="blog">
+                    <div class="thumbnail">
+                        <a href="blog-details.html" class="image">
+                            <img src="assets/images/blog/370/blog-1.jpg"
+                                 alt="Blog Image">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <h3 class="title"><a href="blog-details.html">تجهیزات گرمایش و سرمایش</a></h3>
+                        <p class="desc">مهم‌ترین عنصری که کارایی یک سیستم گرمایش و سرمایش را تعیین می‌کند، کیفیت نصب آن است. با نصب خود ریسک نکنید.</p>
+                        <a href="#" class="link "> <mark>بیشتر</mark> </a>
+                    </div>
+                </div>
+                <!-- Single Blog End -->
+            </div>
+            <div class="col mb-6" data-aos="fade-up">
+                <!-- Single Blog Start -->
+                <div class="blog">
+                    <div class="thumbnail">
+                        <a href="blog-details.html" class="image">
+                            <img src="assets/images/blog/370/blog-2.jpg"
+                                 alt="Blog Image">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <h3 class="title"><a href="blog-details.html">تعمیرات پاسخ سریع</a></h3>
+                        <p class="desc">ماشین‌های ما برای هر اضطراری کاملاً آماده هستند. اگر نیاز به تعمیرات کوچک یا مواردی جدی‌تر داشته باشید، کارشناسان ما با تجربه در نظر منافع شما هستند.</p>
+                        <a href="#" class="link "> <mark>بیشتر</mark> </a>
+                    </div>
+                </div>
+                <!-- Single Blog End -->
+            </div>
+            <div class="col mb-6" data-aos="fade-up">
+                <!-- Single Blog Start -->
+                <div class="blog">
+                    <div class="thumbnail">
+                        <a href="blog-details.html" class="image">
+                            <img src="assets/images/blog/370/blog-3.jpg"
+                                 alt="Blog Image">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <h3 class="title"><a href="blog-details.html">کیفیت هوای داخلی</a></h3>
+                        <p class="desc">اطمینان حاصل کنید که کیفیت هوای شما تحت نظر است. ما با دقت کار می‌کنیم تا اطمینان حاصل شود که سیستم‌های کیفیت هوای شما به درستی نصب شده و در شرایط عالی برای انجام کار خود قرار دارند.</p>
+                        <a href="#" class="link "> <mark>بیشتر</mark> </a>
+                    </div>
+                </div>
+                <!-- Single Blog End -->
+            </div>
+        </div>
+    </div>
+</div>
+ *@<!-- Blog Section End -->
+<!-- Newsletter Section Start -->
+<div class="section section-padding-t110-b120 newsletter-section" data-overlay="0.7"
+     data-bg-image="assets/images/bg/newsletter.jpg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4">
+                <!-- Newsletter Form Start -->
+                <div class="newsletter-form ml-xl-7 ml-lg-0" data-aos="fade-up">
+                    <form action="#">
+                        <input type="email" placeholder="ایمیل خود را وارد کنید" name="mail">
+                        <button class="subscribe-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+                <!-- Newsletter Form End -->
+            </div>
+            <div class="col-lg-8">
+                <!-- Newsletter Content Start -->
+                <div class="newsletter-content mb-lg-0 mb-6">
+                    <!-- Section Title Start -->
+                    <div class="section-title color-light text-left mb-0" data-aos="fade-up">
+                        <h2 class="title">بیایید بفهمیم چگونه می‌توانیم با هم کار کنیم</h2>
+                        <p class="sub-title fz-18 ml-0">
+                            آماده شروع پروژه خود هستید؟ اطلاعات تماس جمع‌آوری شده از طریق
+                            <br> این فرم فقط برای ارسال پاسخ به پرسش شما استفاده خواهد شد.
+                        </p>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+                <!-- Newsletter Content End -->
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Animation Shape Start -->
+    <div class="shape shape-1 scene">
+        <span data-depth="1">
+            <img src="assets/images/shape-animation/newsletter-shape.png" alt="">
+        </span>
+    </div>
+    <!-- Animation Shape End -->
+</div>
+<!-- Newsletter Section End -->
+<!-- Contact Information Section Start -->
+<div class="section section-padding-t90-b100">
+    <div class="container shape-animate">
+        <!-- Section Title Start -->
+        <div class="section-title text-center mb-lg-12 mb-sm-8 mb-xs-8" data-aos="fade-up">
+            <h2 class="title fz-32">امروز با ما تماس بگیرید، بیایید با هم آشنا شویم</h2>
+            <p style="text-align: center;direction: ltr;" class="sub-title">
+                ما آماده پاسخگویی به تمامی سوالات شما هستیم! هنگامی که با ما همکاری می‌کنید
+                <br> شما بیش از یک قرارداد دریافت می‌کنید. ما به موفقیت شما متعهد هستیم
+            </p>
+        </div>
+        <!-- Section Title End -->
+
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
+            <div class="col mb-6" data-aos="fade-up">
+                <!-- Contact Information Start -->
+                <div class="contact-info" data-vivus-hover>
+                    <div class="icon">
+                        <img class="svgInject" src="assets/images/svg/linea/linea-basic-map.svg" alt="">
+                    </div>
+                    <div class="info">
+                        <h4 class="title">موقعیت‌های ما</h4>
+                        <span class="info-text">
+                            همدان
+                            <br>
+                        </span>
+                    </div>
+                </div>
+                <!-- Contact Information End -->
+            </div>
+            <div class="col mb-6" data-aos="fade-up">
+                <!-- Contact Information Start -->
+                <div class="contact-info" data-vivus-hover>
+                    <div class="icon">
+                        <img class="svgInject" src="assets/images/svg/linea/linea-basic-message-txt.svg" alt="">
+                    </div>
+                    <div class="info">
+                        <h4 class="title">با ما تماس بگیرید</h4>
+                        <span class="info-text">
+                            09909994894
+                            <br> 09185925976
+                        </span>
+                    </div>
+                </div>
+                <!-- Contact Information End -->
+            </div>
+            <div class="col mb-6" data-aos="fade-up">
+                <!-- Contact Information Start -->
+                <div class="contact-info" data-vivus-hover>
+                    <div class="icon">
+                        <img class="svgInject" src="assets/images/svg/linea/linea-basic-mail-open-text.svg" alt="">
+                    </div>
+                    <div class="info">
+                        <h4 class="title">پست الکترونیکی</h4>
+                        <span class="info-text">
+
+
+                            <a href="#">rezaei2020@gmail.com</a>
+                        </span>
+                    </div>
+                </div>
+                <!-- Contact Information End -->
+            </div>
+        </div>
+
+
+        <!-- Animation Shape Start -->
+        <div class="shape shape-1 scene">
+            <span data-depth="4"><img src="assets/images/shape-animation/video-shape-1.png" alt="shape"></span>
+        </div>
+        <!-- Animation Shape End -->
+
+    </div>
+</div>
+<!-- Contact Information Section End -->
+@section Scripts{
+   
+}

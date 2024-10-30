@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AirPak</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png">
+
+    <!-- CSS
+    ============================================ -->
+    <!-- Vendor CSS (Bootstrap & Icon Font) -->
+    <link rel="stylesheet" href="~/fontawesome.pro.6.5.2/fontawesome.pro.6.5.2/css/all.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/muli-font.css">
+
+    <!-- Plugins CSS (All Plugins Files) -->
+
+    <link rel="stylesheet" href="~/assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="~/assets/css/plugins/animate.css">
+    <link rel="stylesheet" href="~/assets/css/plugins/aos.min.css">
+    <link rel="stylesheet" href="~/assets/css/plugins/magnific-popup.css">
+
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/stylee.css">
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css"> -->
+    @await RenderSectionAsync("preHome", required: false)
+</head>
+
+<body>
+
+    <div id="page" class="section">
+        <!-- Header Section Start -->
+        <div class="header-section header-transparent sticky-header section">
+            <div class="header-inner">
+                <div class="container position-relative">
+                    <div class="row justify-content-between align-items-center">
+
+                        <!-- Header Logo Start -->
+                        <div class="col-xl-2 col-auto order-0">
+                            <div class="header-logo">
+                                <a href="index.html">
+                                    <img class="dark-logo" src="~/assets/images/logo/Airh.png" alt="Agency Logo">
+                                    <img class="light-logo" src="~/assets/images/logo/Airh.png" alt="Agency Logo">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Header Logo End -->
+                        <!-- Header Main Menu Start -->
+                        <div class="col-auto col-xl d-flex align-items-center justify-content-xl-center justify-content-end order-2 order-xl-1">
+                            <div class="menu-column-area d-none d-xl-block position-static">
+                                <nav class="site-main-menu">
+                                    <ul id="menu">
+                                        <div class="icon-wrapper" style="height:50px; justify-content:center;">
+                                            <partial class="partial1" name="_LoginPartial" />
+                                        </div>
+                                        <li>
+                                            <a class="active" asp-action="Index" asp-controller="Home"><span class="menu-text">صفحه اصلی</span></a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="About" asp-controller="Home"><span class="menu-text">درباره ما</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="service.html"><span class="menu-text">خدمات</span></a>
+                                        </li>
+                                        <li class="has-children">
+                                            <a><span class="menu-text">محصولات</span></a>
+                                            <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                                            <ul class="sub-menu">
+                                                <li><a asp-action="AboutProduct" asp-controller="Home"><span class="menu-text">صندلی تصفیه هوا</span></a></li>
+                                               @*  <li><a href="work-details.html"><span class="menu-text">جزئیات کار</span></a></li> *@
+                                            </ul>
+                                        </li>
+@*                                         <li class="has-children">
+                                            <a href="#"><span class="menu-text">وبلاگ</span></a>
+                                            <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                                            <ul class="sub-menu">
+                                                <li><a href="blog-classic.html"><span class="menu-text">وبلاگ کلاسیک</span></a></li>
+                                                <li><a href="blog-details.html"><span class="menu-text">جزئیات وبلاگ</span></a></li>
+                                            </ul>
+                                        </li> *@
+                                        <li>
+                                            <a style="text-align: start;" asp-action="Contact" asp-controller="Home" ><span class="menu-text">تماس با ما</span></a>
+                                        </li>
+                                    </ul>
+
+                                </nav>
+                            </div>
+                            <!-- Header Search Start -->
+                            <div class="header-search-area ml-xl-7 ml-0">
+
+                                <!-- Header Login Start -->
+                                <div class="header-search">
+                                    <a href="javascript:void(0)" class="header-search-toggle">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </div>
+                                <!-- Header Login End -->
+                            </div>
+                            <!-- Header Search End -->
+                            <!-- Header Mobile Menu Toggle Start -->
+                            <div class="header-mobile-menu-toggle d-xl-none ml-sm-2">
+                                <button class="toggle">
+                                    <i class="icon-top"></i>
+                                    <i class="icon-middle"></i>
+                                    <i class="icon-bottom"></i>
+                                </button>
+                            </div>
+                            <!-- Header Mobile Menu Toggle End -->
+                        </div>
+                        <!-- Header Main Menu End -->
+                        <!-- Header Right Start -->
+                        <div class="col-xl-2 col d-none d-sm-flex justify-content-end order-1 order-xl-2">
+                            <a href="contact-us.html" class="btn btn-light btn-hover-primary">با ما تماس بگیرید</a>
+                        </div>
+                        <!-- Header Right End -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            @RenderBody()
+        <!-- Contact Information Section End -->
+
+        <div class="footer-section section" data-bg-color="#030e22">
+            <div class="container">
+
+                <!-- Footer Top Widgets Start -->
+                <div class="row mb-lg-14 mb-md-10 mb-6">
+
+                    <!-- Footer Widget Start -->
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 col-12 mb-6">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img style="max-width: 150px;" src="~/assets/images/logo/Air (1).png"
+                                         alt="Agency Logo">
+                                </a>
+                            </div>
+                            <div class="footer-widget-content">
+                                <div class="content">
+                                    <p><a href="#">09909994894</a></p>
+                                    <p><a href="#">rezaei2020@gmail.com</a> </p>
+                                </div>
+                                <div class="footer-social-inline">
+                                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget End -->
+                    <!-- Footer Widget Start -->
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-6">
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title">خدمات</h4>
+                            <div class="footer-widget-content">
+                                <ul>
+                                    <li><a href="#">به زودی</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget End -->
+                    <!-- Footer Widget Start -->
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-6">
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title">محصولات</h4>
+                            <div class="footer-widget-content">
+                                <ul>
+                                    <li><a href="#">به زودی</a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"> <span class="ft-badge">جدید</span></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget End -->
+                    <!-- Footer Widget Start -->
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-6">
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title">درباره ما</h4>
+                            <div class="footer-widget-content">
+                                <ul>
+                                    <li><a href="#">ویژگی‌ها</a></li>
+                                    <li><a href="#">شرکای ما</a></li>
+                                    <li><a href="#">برنامه همکاری</a></li>
+                                    <li><a href="#">قیمت گذاری</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget End -->
+                    <!-- Footer Widget Start -->
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-6">
+                        <div class="footer-widget">
+                            <h4 class="footer-widget-title">تماس با ما</h4>
+                            <div class="footer-widget-content">
+                                <ul>
+                                    <li><a href="#"> پشتیبانی</a></li>
+                                
+                                    <li><a href="#">سوالات متداول</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Widget End -->
+                    <!-- Footer Top Widgets End -->
+                    <!-- Footer Copyright Start -->
+                    <div class="row">
+                        <div class="col">
+                            <p dir="rtl" lang="fa-IR" class="copyright">© 2024 <strong>ایده های نوین درهوای پاک</strong> ساخته شده با <i class="fas fa-heart text-danger" aria-hidden="true"></i> توسط <a href="https://www.linkedin.com/in/saleh-falahi-9210942b2">Karizma Kyan Fanavari<strong></strong></a>.</p>
+                        </div>
+
+                    </div>
+                    <!-- Footer Copyright End -->
+
+                </div>
+            </div>
+
+            <!-- Scroll Top Start -->
+            <a href="#" class="scroll-top" id="scroll-top">
+                <i class="arrow-top fal fa-long-arrow-up"></i>
+                <i class="arrow-bottom fal fa-long-arrow-up"></i>
+            </a>
+            <!-- Scroll Top End -->
+        </div>
+
+        <div id="site-main-mobile-menu" class="site-main-mobile-menu">
+            <div class="site-main-mobile-menu-inner">
+                <div class="mobile-menu-header">
+                    <div class="mobile-menu-logo">
+                        <a href="index.html"><img src="~/assets/images/logo/Airh.png" alt=""></a>
+                    </div>
+                    <div class="mobile-menu-close">
+                        <button class="toggle">
+                            <i class="icon-top"></i>
+                            <i class="icon-bottom"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mobile-menu-content">
+                    <nav class="site-mobile-menu ">
+                        <ul>
+                            <li>
+                                <a class="textright" href="index.html"><span class="menu-text">صفحه اصلی</span></a>
+                            </li>
+                            <li>
+                                <a href="about.html"><span class="menu-text">درباره ما</span></a>
+                            </li>
+                            <li>
+                                <a href="service.html"><span class="menu-text">خدمات</span></a>
+                            </li>
+                            <li class="has-children">
+                                <a href="work.html"><span class="menu-text">نمونه کارها</span></a>
+                                <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                                <ul class="sub-menu">
+                                    <li><a href="work.html"><span class="menu-text">نمونه کارها</span></a></li>
+                                    <li><a href="work-details.html"><span class="menu-text">جزئیات نمونه کار</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-children">
+                                <a href="#"><span class="menu-text">وبلاگ</span></a>
+                                <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-classic.html"><span class="menu-text">وبلاگ کلاسیک</span></a></li>
+                                    <li><a href="blog-details.html"><span class="menu-text">جزئیات وبلاگ</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="contact-us.html"><span class="menu-text">تماس با ما</span></a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+        <!-- JS
+        ============================================ -->
+        <!-- Vendors JS -->
+@*     <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-3.4.1.min.js" async></script>
+
+    <script src="~/assets/js/vendor/jquery-migrate-3.1.0.min.js"></script>
+    <script src="~/assets/js/vendor/bootstrap.bundle.min.js"></script> *@
+    <!-- Modernizr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/3.6.0/modernizr.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- jQuery Migrate -->
+    <script src="https://code.jquery.com/jquery-migrate-3.1.0.min.js"></script>
+
+    <!-- Bootstrap Bundle (includes Popper) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Plugins JS -->
+    <script src="~/assets/js/plugins/aos.min.js"></script>
+    <script src="~/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="~/assets/js/plugins/isotope.pkgd.min.js"></script>
+    <script src="~/assets/js/plugins/parallax.min.js"></script>
+    <script src="~/assets/js/plugins/jquery.ajaxchimp.min.js"></script>
+    <script src="~/assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="~/assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/js/plugins/svg-inject.min.js"></script>
+    <script src="~/assets/js/plugins/swiper.min.js"></script>
+    <script src="~/assets/js/plugins/vanilla-tilt.min.js"></script>
+    <script src="~/assets/js/plugins/vivus.min.js"></script>
+    <script src="~/assets/js/plugins/waypoints.min.js"></script>
+
+        <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+        <!-- <script src="assets/js/vendor/vendor.min.js"></script>
+        <script src="assets/js/plugins/plugins.min.js"></script> -->
+        <!-- Main Activation JS -->
+    <script src="~/assets/js/main.js"></script>
+   
+
+        <script src="~/fontawesome.pro.6.5.2/fontawesome.pro.6.5.2/js/all.js"></script>
+
+    <script>
+        $(document).ready(function () {
+          
+            const menuLinks = document.querySelectorAll('#menu a');
+
+         
+            menuLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+          
+            const currentUrl = window.location.href;
+
+           
+            menuLinks.forEach(link => {
+                const linkUrl = link.href;
+
+                if (linkUrl === currentUrl) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+
+    </script>
+    <script>
+        // برای انتخاب ثبتنام و ورود
+        function handleSelectChange(event) {
+            const selectedValue = event.target.value;
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        }
+    </script>
+        @await RenderSectionAsync("Scripts", required: false)
+
+   
+</body>
+
+</html>

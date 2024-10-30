@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewData["Title"] = "ManageHeader";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-group input, .form-group textarea {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+
+            .form-group button {
+                padding: 10px 15px;
+                background-color: #007BFF;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+
+    </style>
+
+
+<div class="container">
+    <h1>مدیریت بنر</h1>
+    <div class="form-group">
+        <label for="header">هدر:</label>
+        <input type="text" id="header" class="form-control">
+    </div>
+   
+    <div class="form-group">
+        <label for="description">توضیحات:</label>
+        <textarea id="description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="image">تصویر:</label>
+        <input type="file" id="image" class="form-control">
+        <div id="banner-image" src="" alt="Banner Image" class="img-fluid mt-2"></div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" onclick="updateBanner()">به‌روزرسانی بنر</button>
+    </div>
+</div>
+@section DashboardScripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fetchBannerData();
+        });
+
+        function fetchBannerData() {
+            fetch('/jsons/banner.json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('header').value = data.header;
+                    document.getElementById('description').value = data.description;
+                    document.getElementById('banner-image').style.backgroundImage = `url(${data.image})`;
+
+                })
+                .catch(error => console.error('Error fetching banner data:', error));
+        }
+
+        function updateBanner() {
+            const header = document.getElementById('header').value;
+            const imageFile = document.getElementById('image').files[0];
+            const description = document.getElementById('description').value;
+
+            const formData = new FormData();
+            formData.append('Header', header);
+            formData.append('Description', description);
+            formData.append('Image', imageFile);
+
+            fetch('/AHome/UpdateHeader', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert('بنر با موفقیت به‌روزرسانی شد!');
+                })
+                .catch(error => console.error('Error updating banner:', error));
+        }
+    </script>
+}
