@@ -53,13 +53,7 @@
 
 
 -----------------------------------------------------------------------------------*/
-/* Bootstrap Theming Variable CSS */
-/*!
- * Bootstrap v5.0.0-alpha2 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+
 
 @import url('../../fontawesome.pro.6.5.2/fontawesome.pro.6.5.2/css/all.css');
 
@@ -203,9 +197,9 @@ h6, .h6 {
   }
 
 p {
-  margin-top: 0;
-  direction: rtl;
-  margin-bottom: 1rem; }
+    margin-top: 0;
+    direction: rtl;
+}
 
 abbr[title],
 abbr[data-original-title] {
@@ -626,9 +620,10 @@ progress {
     margin-top: var(--bs-gutter-y); }
 
 .col {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 0 0%;
-  flex: 1 0 0%; }
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
+}
 
 .row-cols-auto > * {
   -webkit-box-flex: 0;
@@ -27937,7 +27932,7 @@ textarea {
   max-width: 760px; }
   .intro-content .title {
     text-align: right;
-    font-size: 70px;
+    font-size: 46px;
     line-height: 1;
     color: #fff;
     margin-bottom: 40px; }
@@ -28090,8 +28085,8 @@ textarea {
   background-color: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(51, 51, 51, 0.1);
-  box-shadow: 0px 0px 40px 0px rgba(51, 51, 51, 0.1);
+  -webkit-box-shadow: 0px 0px 40px 50px rgba(51, 51, 51, 0.1);
+  box-shadow: 0px 0px 40px 50px rgba(51, 51, 51, 0.1);
   text-align: center; }
   @media only screen and (max-width: 767px) {
     .static-testimonial {

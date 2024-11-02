@@ -27,7 +27,7 @@
 
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="~/assets/css/stylee.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
@@ -70,16 +70,16 @@
                                             <a asp-action="About" asp-controller="Home"><span class="menu-text">درباره ما</span></a>
                                         </li>
                                         <li>
-                                            <a href="service.html"><span class="menu-text">خدمات</span></a>
+                                            <a asp-action="AboutProduct" asp-controller="Home"><span class="menu-text">درباره محصول</span></a>
                                         </li>
-                                        <li class="has-children">
+                                        @* <li class="has-children">
                                             <a><span class="menu-text">محصولات</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                             <ul class="sub-menu">
-                                                <li><a asp-action="AboutProduct" asp-controller="Home"><span class="menu-text">صندلی تصفیه هوا</span></a></li>
-                                               @*  <li><a href="work-details.html"><span class="menu-text">جزئیات کار</span></a></li> *@
+                                                <li><a ><span class="menu-text">صندلی تصفیه هوا</span></a></li>
+                                                 <li><a href="work-details.html"><span class="menu-text">جزئیات کار</span></a></li> 
                                             </ul>
-                                        </li>
+                                        </li> *@
 @*                                         <li class="has-children">
                                             <a href="#"><span class="menu-text">وبلاگ</span></a>
                                             <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
@@ -119,9 +119,7 @@
                         </div>
                         <!-- Header Main Menu End -->
                         <!-- Header Right Start -->
-                        <div class="col-xl-2 col d-none d-sm-flex justify-content-end order-1 order-xl-2">
-                            <a href="contact-us.html" class="btn btn-light btn-hover-primary">با ما تماس بگیرید</a>
-                        </div>
+                       
                         <!-- Header Right End -->
 
                     </div>
@@ -206,7 +204,7 @@
                     <!-- Footer Widget Start -->
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-6">
                         <div class="footer-widget">
-                            <h4 class="footer-widget-title">تماس با ما</h4>
+                            <a asp-controller="Home" asp-action="Contact"><h4 class="footer-widget-title">تماس با ما</h4></a>
                             <div class="footer-widget-content">
                                 <ul>
                                     <li><a href="#"> پشتیبانی</a></li>
@@ -255,32 +253,32 @@
                     <nav class="site-mobile-menu ">
                         <ul>
                             <li>
-                                <a class="textright" href="index.html"><span class="menu-text">صفحه اصلی</span></a>
+                                <a class="textright" asp-action="IndexAsync"asp-controller="Home"><span class="menu-text">صفحه اصلی</span></a>
                             </li>
                             <li>
-                                <a href="about.html"><span class="menu-text">درباره ما</span></a>
+                                <a asp-controller="Home" asp-action="About"><span class="menu-text">درباره ما</span></a>
                             </li>
                             <li>
-                                <a href="service.html"><span class="menu-text">خدمات</span></a>
+                                <a asp-action="AboutProduct" asp-controller="Home"><span class="menu-text">درباره محصول</span></a>
                             </li>
-                            <li class="has-children">
+                          @*   <li class="has-children">
                                 <a href="work.html"><span class="menu-text">نمونه کارها</span></a>
                                 <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                 <ul class="sub-menu">
                                     <li><a href="work.html"><span class="menu-text">نمونه کارها</span></a></li>
                                     <li><a href="work-details.html"><span class="menu-text">جزئیات نمونه کار</span></a></li>
                                 </ul>
-                            </li>
-                            <li class="has-children">
+                            </li> *@
+                           @*  <li class="has-children">
                                 <a href="#"><span class="menu-text">وبلاگ</span></a>
                                 <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
                                 <ul class="sub-menu">
                                     <li><a href="blog-classic.html"><span class="menu-text">وبلاگ کلاسیک</span></a></li>
                                     <li><a href="blog-details.html"><span class="menu-text">جزئیات وبلاگ</span></a></li>
                                 </ul>
-                            </li>
+                            </li> *@
                             <li>
-                                <a href="contact-us.html"><span class="menu-text">تماس با ما</span></a>
+                                <a asp-controller="Home" asp-action="Contact"><span class="menu-text">تماس با ما</span></a>
                             </li>
                         </ul>
 

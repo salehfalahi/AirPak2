@@ -36,15 +36,25 @@
 
                                 <div class="intro-content mt-8">
                                     <h2 class="title">صندلی های هوشمند تصفیه کننده ی هوا</h2>
+                                   
                                     <div class="desc">
-                                        <p>ما اهمیت هوای سالم را می‌فهمیم، به همین دلیل ما چندین راه‌حل و محصول تمیز کردن هوا ارائه می‌دهیم. کیفیت بد هوای داخلی می‌تواند منجر به ایجاد انواع مشکلات بهداشتی شود. با سیستم‌های کیفیت هوای ما، هوای خانه یا محیط کار خود را پاک و سالم نگه دارید.</p>
+                                        <p>
+                                            یک صندلی   یا یک تصفیه‌کننده هوا ؟
+                                        </p>
+                                        <p>
+                                            هردو! در AirPak  ، ما دوست داریم به طرز متفاوتی فکر کنیم تا از هر فضای ممکن به حداکثر استفاده رسید
+                                            ‌
+                                        
+                                            ایده صندلی هوشمند ابتدا زمانی مطرح شد ، که توانستیم تجارب خود را با علم ترکیب کنیم. "  ما فرصت منحصر به فردی برای یکپارچه‌سازی فناوری در خانه داریم و موادی مانند پلاستیک، فلز، پارچه و چوب را به یک روش ایمن و علمی و دقیق و خلاقانه  ترکیب می‌کنیم."
+                                        </p>
                                     </div>
 
                                     @foreach (var product in ViewBag.Products)
                                     {
-                                        <a asp-action="Index" asp-controller="Product" asp-route-id="@product.Id" class="btn btn-primary btn-hover-secondary">خرید محصول</a>
+                                        <a href="@Url.Action("Index", "Product", new { id = product.Id })" class="btn btn-primary btn-hover-secondary">خرید محصول</a>
                                     }
-                                    <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
+                                    <a href="@Url.Action("AboutProduct", "Home")" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
+
                                 </div>
 
                             </div>
@@ -54,82 +64,83 @@
 
                 </div>
             </div>
-@*             <div class="swiper-slide">
-                <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/pexels-freestockpro-321576.jpg">
+            @*             <div class="swiper-slide">
+            <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/pexels-freestockpro-321576.jpg">
 
-                    <div class="container">
-                        <div class="row row-cols-lg-1 row-cols-1">
+            <div class="container">
+            <div class="row row-cols-lg-1 row-cols-1">
 
-                            <div class="col align-self-center">
+            <div class="col align-self-center">
 
-                                <div class="intro-content mt-8">
-                                    <h2 class="title">بهترین سیستم‌های کیفیت هوای داخلی</h2>
-                                    <div class="desc">
-                                        <p>ما اهمیت هوای سالم را می‌فهمیم، به همین دلیل ما چندین راه‌حل و محصول تمیز کردن هوا ارائه می‌دهیم. کیفیت بد هوای داخلی می‌تواند منجر به ایجاد انواع مشکلات بهداشتی شود. با سیستم‌های کیفیت هوای ما، هوای خانه یا محیط کار خود را پاک و سالم نگه دارید.</p>
-                                    </div>
-                                    <a href="course-details-free.html" class="btn btn-primary btn-hover-secondary">شروع کنید</a>
-                                    <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
+            <div class="intro-content mt-8">
+            <h2 class="title">بهترین سیستم‌های کیفیت هوای داخلی</h2>
+            <div class="desc">
+            <p>ما اهمیت هوای سالم را می‌فهمیم، به همین دلیل ما چندین راه‌حل و محصول تمیز کردن هوا ارائه می‌دهیم. کیفیت بد هوای داخلی می‌تواند منجر به ایجاد انواع مشکلات بهداشتی شود. با سیستم‌های کیفیت هوای ما، هوای خانه یا محیط کار خود را پاک و سالم نگه دارید.</p>
             </div>
-            <div class="swiper-slide">
-                <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/hero-2.jpg">
+            <a href="course-details-free.html" class="btn btn-primary btn-hover-secondary">شروع کنید</a>
+            <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
+            </div>
 
-                    <div class="container">
-                        <div class="row row-cols-lg-1 row-cols-1">
+            </div>
 
-                            <!-- Intro One Content Start -->
-                            <div class="col align-self-center">
-                                <div class="intro-content mt-8">
-                                    <h2 class="title">کیفیت هوای داخلی و راحتی واقعی</h2>
-                                    <div class="desc">
-                                        <p>در دنیای پیچیده امروز، آلرژن‌ها و هوای داخلی غیرایمن مشکلات واقعی برای صاحبان خانه‌ها و کسب‌وکارها هستند. Air Pure Innovations با استفاده از تکنولوژی‌های پیشرفته، سیستم‌هایی را ارائه می‌دهد که هوا را تصفیه کرده و آلاینده‌ها را کاهش می‌دهد، تا هوایی پاک و سالم برای شما فراهم کند.</p>
-                                    </div>
-                                    <a href="course-details-free.html" class="btn btn-primary btn-hover-secondary">شروع کنید</a>
-                                    <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
-                                </div>
+            </div>
+            </div>
 
-                            </div>
-                            <!-- Intro One Content End -->
-
-                        </div>
-                    </div>
-
-                </div>
+            </div>
             </div>
             <div class="swiper-slide">
-                <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/pexels-kelvin809-810775.jpg">
+            <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/hero-2.jpg">
 
-                    <div class="container">
-                        <div class="row row-cols-lg-1 row-cols-1">
+            <div class="container">
+            <div class="row row-cols-lg-1 row-cols-1">
 
-                            <!-- Intro One Content Start -->
-                            <div class="col align-self-center max-mb-30">
-                                <div class="intro-content mt-8">
-                                    <h2 class="title">زندگی سالم با هوای پاک</h2>
-                                    <div class="desc">
-                                        <p>تصور کنید هر بار که نفس می‌کشید، هوای تازه و پاکی را استنشاق می‌کنید. با سیستم‌های تصفیه هوای ما، این رویا به واقعیت تبدیل می‌شود. بیایید با هم هوایی سالم و پاک برای خانه و محل کارتان فراهم کنیم.</p>
-                                    </div>
-                                    <a href="course-details-free.html" class="btn btn-primary btn-hover-secondary">شروع کنید</a>
-                                    <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
-                                </div>
-
-                            </div>
-                            <!-- Intro One Content End -->
-
-                        </div>
-                    </div>
-
-                </div>
+            <!-- Intro One Content Start -->
+            <div class="col align-self-center">
+            <div class="intro-content mt-8">
+            <h2 class="title">کیفیت هوای داخلی و راحتی واقعی</h2>
+            <div class="desc">
+            <p>در دنیای پیچیده امروز، آلرژن‌ها و هوای داخلی غیرایمن مشکلات واقعی برای صاحبان خانه‌ها و کسب‌وکارها هستند. Air Pure Innovations با استفاده از تکنولوژی‌های پیشرفته، سیستم‌هایی را ارائه می‌دهد که هوا را تصفیه کرده و آلاینده‌ها را کاهش می‌دهد، تا هوایی پاک و سالم برای شما فراهم کند.</p>
             </div>
-    *@     </div>
-      
+            <a href="course-details-free.html" class="btn btn-primary btn-hover-secondary">شروع کنید</a>
+            <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
+            </div>
+
+            </div>
+            <!-- Intro One Content End -->
+
+            </div>
+            </div>
+
+            </div>
+            </div>
+            <div class="swiper-slide">
+            <div class="intro-section section overlay" data-bg-image="assets/images/hero-image/pexels-kelvin809-810775.jpg">
+
+            <div class="container">
+            <div class="row row-cols-lg-1 row-cols-1">
+
+            <!-- Intro One Content Start -->
+            <div class="col align-self-center max-mb-30">
+            <div class="intro-content mt-8">
+            <h2 class="title">زندگی سالم با هوای پاک</h2>
+            <div class="desc">
+            <p>تصور کنید هر بار که نفس می‌کشید، هوای تازه و پاکی را استنشاق می‌کنید. با سیستم‌های تصفیه هوای ما، این رویا به واقعیت تبدیل می‌شود. بیایید با هم هوایی سالم و پاک برای خانه و محل کارتان فراهم کنیم.</p>
+            </div>
+            <a href="course-details-free.html" class="btn btn-primary btn-hover-secondary">شروع کنید</a>
+            <a href="#" class="btn btn-outline-white btn-hover-primary">بیشتر بدانید</a>
+            </div>
+
+            </div>
+            <!-- Intro One Content End -->
+
+            </div>
+            </div>
+
+            </div>
+            </div>
+            *@
+        </div>
+
     </div>
 </div>
 <!-- Slider/Intro Section End -->
@@ -180,7 +191,7 @@
                         کیفیت پایین هوای داخل خانه می تواند منجر به تعدادی از مشکلات سلامتی مانند آسم و آلرژی های مداوم شود. بسیاری از مردم روزانه این مسائل را تجربه می کنند اما نمی دانند که این مشکلات مربوط به کیفیت پایین هوای داخل خانه است. ما  اهمیت هوای سالم را می دانیم ، به همین دلیل است که ما چندین راه حل و محصول اثبات شده هوای پاک را ارائه می دهیم.
                     </p>
 
-                    <a class="btn btn-primary btn-hover-secondary mt-xl-12 mt-lg-8 mt-md-6 mt-4" href="#">درباره ما</a>
+                    <a asp-action="About" asp-controller="Home" class="btn btn-primary btn-hover-secondary mt-xl-12 mt-lg-8 mt-md-6 mt-4" >درباره ما</a>
                 </div>
 
                 <!-- About Content Area Start -->
@@ -193,7 +204,7 @@
     </div>
 </div>
 <!-- About Section End -->
-<!-- Skill With Video Section Start -->
+@* <!-- Skill With Video Section Start -->
 <div class="section section-padding" data-bg-color="#f8faff">
 
     <div class="container">
@@ -271,7 +282,7 @@
     </div>
 
 </div>
-<!-- Skill With Video Section End -->
+<!-- Skill With Video Section End --> *@
 <!-- Service Section Start -->
 <div class="section section-padding-t90-b100">
     <div class="container">
@@ -294,13 +305,13 @@
                 <div class="icon-box text-center" data-vivus-hover>
                     <div class="icon"><img class="svgInject" src="/assets/images/svg/linea/linea-basic-target.svg" alt=""></div>
                     <div class="content">
-                  
+
 
                         <h3 class="title">فیلترهای تصفیه هوا</h3>
- <div class="desc"> 
-     <p>فیلترهای تصفیه هوا نقش کلیدی در بهبود کیفیت هوای داخلی دارند. انتخاب فیلتر مناسب می‌تواند ذرات معلق، گرد و غبار، و آلاینده‌های موجود در هوا را به طرز مؤثری کاهش دهد. فیلترهای HEPA، کربن فعال و دیگر نوع‌ها، هر کدام ویژگی‌های خاص خود را دارند که باید بر اساس نیازها و شرایط محیطی انتخاب شوند. با نگهداری منظم و تعویض فیلترها، می‌توانید از عملکرد بهینه دستگاه‌های تصفیه هوا اطمینان حاصل کنید.</p>
-  </div>
-                        <a href="#" class="link">بیشتر بدانید</a>
+                        <div class="desc">
+                            <p>فیلترهای تصفیه هوا نقش کلیدی در بهبود کیفیت هوای داخلی دارند. انتخاب فیلتر مناسب می‌تواند ذرات معلق، گرد و غبار، و آلاینده‌های موجود در هوا را به طرز مؤثری کاهش دهد. فیلترهای HEPA، کربن فعال و دیگر نوع‌ها، هر کدام ویژگی‌های خاص خود را دارند که باید بر اساس نیازها و شرایط محیطی انتخاب شوند. با نگهداری منظم و تعویض فیلترها، می‌توانید از عملکرد بهینه دستگاه‌های تصفیه هوا اطمینان حاصل کنید.</p>
+                        </div>
+                        <a asp-action="About" asp-controller="Home" class="link">بیشتر بدانید</a>
                     </div>
                 </div>
             </div>
@@ -316,7 +327,7 @@
                         <div class="desc">
                             <p>همیشه اطمینان داشته باشید که کیفیت هوای داخلی خانه‌تان تحت نظر است. برای همه‌ی نیازهای نصب و تعمیر سیستم‌های کیفیت هوای داخلی در AirPak، اعتماد به . کنید. با شماره 09909994894 تماس بگیرید. برای اطلاعات بیشتر در مورد تخفیفات و کوپن‌های آنلاین، اینجا را کلیک کنید.</p>
                         </div>
-                        <a href="#" class="link">بیشتر بدانید</a>
+                        <a asp-action="About" asp-controller="Home" class="link">بیشتر بدانید</a>
                     </div>
                 </div>
 
@@ -330,15 +341,16 @@
                 <div class="icon-box text-center" data-vivus-hover>
                     <div class="icon">
                         <img class="svgInject"
-                             src="assets/images/svg/linea/linea-basic-life-buoy.svg" alt="">
+                             src="/assets/images/svg/linea/linea-basic-life-buoy.svg" alt="">
                     </div>
 
-                    <div class="content"> 
+                    <div class="content">
                         <h3 class="title">استراتژی تصفیه هوا</h3>
-                        <div class="desc"> <p>بهبود کیفیت هوا در محیط‌های داخلی نه تنها به سلامت انسان‌ها کمک می‌کند، بلکه می‌تواند کیفیت زندگی را افزایش دهد. استفاده از دستگاه‌های تصفیه هوا با فیلترهای مناسب، آلاینده‌ها و ذرات معلق را کاهش می‌دهد و به ایجاد فضایی سالم‌تر کمک می‌کند. آگاهی از روش‌های نگهداری و بهینه‌سازی عملکرد این دستگاه‌ها می‌تواند تأثیر زیادی در کارایی آن‌ها داشته باشد.</p>
-                            </div> 
-                            <a href="#" class="link">بیشتر بدانید</a> 
+                        <div class="desc">
+                            <p>بهبود کیفیت هوا در محیط‌های داخلی نه تنها به سلامت انسان‌ها کمک می‌کند، بلکه می‌تواند کیفیت زندگی را افزایش دهد. استفاده از دستگاه‌های تصفیه هوا با فیلترهای مناسب، آلاینده‌ها و ذرات معلق را کاهش می‌دهد و به ایجاد فضایی سالم‌تر کمک می‌کند. آگاهی از روش‌های نگهداری و بهینه‌سازی عملکرد این دستگاه‌ها می‌تواند تأثیر زیادی در کارایی آن‌ها داشته باشد.</p>
                         </div>
+                        <a asp-action="About" asp-controller="Home" class="link">بیشتر بدانید</a>
+                    </div>
 
                 </div>
 
@@ -350,7 +362,7 @@
     </div>
 </div>
 <!-- Service Section End -->
-<!-- Success Section Start -->
+@* <!-- Success Section Start -->
 <div class="section section-padding-top section-padding-bottom-200" data-bg-color="#f8faff">
     <div class="container">
         <div class="row">
@@ -400,7 +412,7 @@
         </div>
     </div>
 </div>
-<!-- Success Section End -->
+<!-- Success Section End --> *@
 <!-- Portfolio Section Start -->
 <div class="section section-padding-t90 ag-masonary-wrapper">
     <div class="container-fluid px-0">
@@ -427,54 +439,6 @@
                 <div class="single-portfolio">
                     <div class="thumbnail">
                         <img class="img-fluid" src="/assets/images/filter012122_033.jpg" alt="Portfolio-01">
-                    </div>
-                    <div class="content">
-                        <h5 class="title">
-                            <a href="#">
-                                Project Name #1 <img src="/assets/images/icons/arrow-up-right.svg" alt="">
-                            </a>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Portfolio End -->
-            <!-- Single Portfolio Start -->
-            <div class="col cat-2 cat-5">
-                <div class="single-portfolio">
-                    <div class="thumbnail">
-                        <img class="img-fluid" src="/assets/images/IMG_۲۰۲۴۱۰۱۵_۰۱۳۵۲۳.jpg" alt="Portfolio-01">
-                    </div>
-                    <div class="content">
-                        <h5 class="title">
-                            <a href="#">
-                                Project Name #1 <img src="/assets/images/icons/arrow-up-right.svg" alt="">
-                            </a>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Portfolio End -->
-            <!-- Single Portfolio Start -->
-            <div class="col cat-2 cat-5">
-                <div class="single-portfolio">
-                    <div class="thumbnail">
-                        <img class="img-fluid" src="/assets/images/IMG_۲۰۲۴۱۰۲۹_۱۸۴۵۵۱.jpg" alt="Portfolio-01">
-                    </div>
-                    <div class="content">
-                        <h5 class="title">
-                            <a href="#">
-                                Project Name #1 <img src="/assets/images/icons/arrow-up-right.svg" alt="">
-                            </a>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Portfolio End -->
-            <!-- Single Portfolio Start -->
-            <div class="col cat-2 cat-5">
-                <div class="single-portfolio">
-                    <div class="thumbnail">
-                        <img class="img-fluid" src="/assets/images/IMG_۲۰۲۴۱۰۲۹_۱۸۴۴۴۸.jpg" alt="Portfolio-01">
                     </div>
                     <div class="content">
                         <h5 class="title">
@@ -517,154 +481,38 @@
                     </div>
                 </div>
             </div>
-            <!-- Single Portfolio End -->
-@*             <!-- Single Portfolio Start -->
-            <div class="col cat-5">
-                <div class="single-portfolio">
-                    <div class="thumbnail">
-                        <img class="img-fluid" src="" alt="Portfolio-01">
-                    </div>
-                    <div class="content">
-                        <h5 class="title">
-                            <a href="#">
-                                Project Name #1 <img src="assets/images/icons/arrow-up-right.svg" alt="">
-                            </a>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Portfolio End -->
-            <!-- Single Portfolio Start -->
-            <div class="col cat-2">
-                <div class="single-portfolio">
-                    <div class="thumbnail">
-                        <img class="img-fluid" src="" alt="Portfolio-01">
-                    </div>
-                    <div class="content">
-                        <h5 class="title">
-                            <a href="#">
-                                Project Name #1 <img src="assets/images/icons/arrow-up-right.svg" alt="">
-                            </a>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Portfolio End --> *@
-        </div>
-    </div>
-</div>
-<!-- Portfolio Section End -->
-<!-- Blog Section Start -->@* 
-<div class="section section-padding-t90-b100">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4">
-                <div class="section-button text-lg-right text-left mb-md-8 mb-sm-6 mb-6" data-aos="fade-up">
-                    <a href="#" class="btn btn-primary ">بازدید از وبلاگ</a>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <!-- Section Title Two Start -->
-                <div class="section-title-two mb-lg-12 mb-md-6" data-aos="fade-up">
-                    <span class="sub-title">آخرین اخبار بازاریابی و بینش‌های مدیریتی</span>
-                    <h3 class="title">تمام آخرین اخبار بازاریابی و جذاب‌ترین آمارها برای بازاریابان را به شما ارائه می‌دهیم</h3>
-                </div>
+       
 
-
-                <!-- Section Title Two End -->
-            </div>
-
-
-        </div>
-
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n6">
-            <div class="col mb-6" data-aos="fade-up">
-                <!-- Single Blog Start -->
-                <div class="blog">
-                    <div class="thumbnail">
-                        <a href="blog-details.html" class="image">
-                            <img src="assets/images/blog/370/blog-1.jpg"
-                                 alt="Blog Image">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <h3 class="title"><a href="blog-details.html">تجهیزات گرمایش و سرمایش</a></h3>
-                        <p class="desc">مهم‌ترین عنصری که کارایی یک سیستم گرمایش و سرمایش را تعیین می‌کند، کیفیت نصب آن است. با نصب خود ریسک نکنید.</p>
-                        <a href="#" class="link "> <mark>بیشتر</mark> </a>
-                    </div>
-                </div>
-                <!-- Single Blog End -->
-            </div>
-            <div class="col mb-6" data-aos="fade-up">
-                <!-- Single Blog Start -->
-                <div class="blog">
-                    <div class="thumbnail">
-                        <a href="blog-details.html" class="image">
-                            <img src="assets/images/blog/370/blog-2.jpg"
-                                 alt="Blog Image">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <h3 class="title"><a href="blog-details.html">تعمیرات پاسخ سریع</a></h3>
-                        <p class="desc">ماشین‌های ما برای هر اضطراری کاملاً آماده هستند. اگر نیاز به تعمیرات کوچک یا مواردی جدی‌تر داشته باشید، کارشناسان ما با تجربه در نظر منافع شما هستند.</p>
-                        <a href="#" class="link "> <mark>بیشتر</mark> </a>
-                    </div>
-                </div>
-                <!-- Single Blog End -->
-            </div>
-            <div class="col mb-6" data-aos="fade-up">
-                <!-- Single Blog Start -->
-                <div class="blog">
-                    <div class="thumbnail">
-                        <a href="blog-details.html" class="image">
-                            <img src="assets/images/blog/370/blog-3.jpg"
-                                 alt="Blog Image">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <h3 class="title"><a href="blog-details.html">کیفیت هوای داخلی</a></h3>
-                        <p class="desc">اطمینان حاصل کنید که کیفیت هوای شما تحت نظر است. ما با دقت کار می‌کنیم تا اطمینان حاصل شود که سیستم‌های کیفیت هوای شما به درستی نصب شده و در شرایط عالی برای انجام کار خود قرار دارند.</p>
-                        <a href="#" class="link "> <mark>بیشتر</mark> </a>
-                    </div>
-                </div>
-                <!-- Single Blog End -->
-            </div>
-        </div>
-    </div>
-</div>
- *@<!-- Blog Section End -->
 <!-- Newsletter Section Start -->
 <div class="section section-padding-t110-b120 newsletter-section" data-overlay="0.7"
      data-bg-image="assets/images/bg/newsletter.jpg">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-4">
-                <!-- Newsletter Form Start -->
-                <div class="newsletter-form ml-xl-7 ml-lg-0" data-aos="fade-up">
-                    <form action="#">
-                        <input type="email" placeholder="ایمیل خود را وارد کنید" name="mail">
-                        <button class="subscribe-btn"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-                <!-- Newsletter Form End -->
-            </div>
+
             <div class="col-lg-8">
                 <!-- Newsletter Content Start -->
                 <div class="newsletter-content mb-lg-0 mb-6">
                     <!-- Section Title Start -->
                     <div class="section-title color-light text-left mb-0" data-aos="fade-up">
                         <h2 class="title">بیایید بفهمیم چگونه می‌توانیم با هم کار کنیم</h2>
-                        <p class="sub-title fz-18 ml-0">
-                            آماده شروع پروژه خود هستید؟ اطلاعات تماس جمع‌آوری شده از طریق
+                        <p style="text-align: justify;direction: rtl;" class="sub-title fz-18 ml-0">
+                            اطلاعات تماس جمع‌آوری شده از طریق
                             <br> این فرم فقط برای ارسال پاسخ به پرسش شما استفاده خواهد شد.
                         </p>
                     </div>
                     <!-- Section Title End -->
                 </div>
                 <!-- Newsletter Content End -->
+                <div class="col-lg-4">
+                    <!-- Newsletter Form Start -->
+                    <div class="newsletter-form ml-xl-7 ml-lg-0" data-aos="fade-up">
+                        <form style="width: 102px; margin: 0 50%;">
+                            <a style="text-align: start; padding: 8px; border-radius: 8px;border: solid;" asp-action="Contact" asp-controller="Home"><span class="menu-text">تماس با ما</span></a>
+                        </form>
+                    </div>
+                    <!-- Newsletter Form End -->
+                </div>
             </div>
-
-
         </div>
     </div>
 
@@ -752,6 +600,6 @@
     </div>
 </div>
 <!-- Contact Information Section End -->
-@section Scripts{
-   
+@section Scripts {
+
 }

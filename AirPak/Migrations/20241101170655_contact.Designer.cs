@@ -4,6 +4,7 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AirPak.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241101170655_contact")]
+    partial class contact
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -208,13 +211,13 @@ namespace AirPak.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8c023564-fb33-4921-97f0-63d73ae5ade0",
+                            Id = "ad45e6c3-6271-4f68-8ff3-7d98eace623a",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "efec287d-2132-43ce-849e-dda06ef041fc",
+                            Id = "95221573-a9dc-428a-9222-5e5717f4d2ef",
                             Name = "customer",
                             NormalizedName = "CUSTOMER"
                         });

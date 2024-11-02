@@ -12,7 +12,7 @@ namespace AirPak.Controllers.Product
             BE.Product? p = blProduct.SearchById(id);
 
             blClick blClick = new blClick();
-            await blClick.Create();  // استفاده از await برای اجرای صحیح متد async
+            await blClick.Create();  
 
             return View(p);
         }

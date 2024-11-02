@@ -24,9 +24,9 @@
              
             </div>
             <footer class="w3-container ">
-                <a  class="add-to-cart btn btn-primary" href="#">
+                <a class="add-to-cart btn btn-primary" asp-action="Contact" asp-controller="Home">
                     @* onclick="AddToCart(event);" *@
-                    <span class="text text-2" aria-hidden="true">با ما تماس بگیرید</span>
+                    <span  class="text text-2" aria-hidden="true">با ما تماس بگیرید</span>
                 </a>
             </footer>
         </div>
@@ -52,7 +52,15 @@
                         </div>
                         <div class="product-price" price-data="@Model.Price">
                             تومان
-                            @Model.Price
+                            @if (0==@Model.Price)
+                            {
+                                <p>تماس بگیرید</p>
+                            }
+                            else
+                            {
+                                @Model.Price
+
+                            }
                         </div>
                     </div>
                     <div class="product-image">

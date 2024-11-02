@@ -2,8 +2,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using BE;
 using DAL;
+using AirPak;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDataProtection();
+builder.Services.AddScoped<UrlEncryptionService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -13,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseSqlServer(connectionString);
 });
+
 
 builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>() // Add this line to enable roles

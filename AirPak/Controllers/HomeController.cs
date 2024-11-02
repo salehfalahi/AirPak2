@@ -8,22 +8,38 @@ namespace AirPak.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
-         //AppDbContext dbContext = new AppDbContext();
+        private readonly UrlEncryptionService _urlEncryptionService;
 
-		public HomeController(ILogger<HomeController> logger)
+ 
+
+
+        public HomeController(ILogger<HomeController> logger , UrlEncryptionService urlEncryptionService)
 		{
 			_logger = logger;
-		}
+            _urlEncryptionService = urlEncryptionService;
+        }
+ 
+      
 
-		public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> IndexAsync()
 		{
             blProduct blProduct = new blProduct();
             var data = await blProduct.ReadAsync();
             ViewBag.Products = data.ToList();
             return View();
         }
+        public IActionResult CreateMessage(Models.Message message)
+        {
+            blMessage blM = new blMessage();
+            BE.Message message1 = new BE.Message();
+            message1.Name = message.Name;
+                message1.Description = message.Description;
+            message1.Email = message.Email;
+             blM.Create(message1);
+            return View();
+        }
 
-		public IActionResult Privacy()
+        public IActionResult Privacy()
 		{
 			return View();
 		}
@@ -44,7 +60,8 @@ namespace AirPak.Controllers
         {
          
             return View();
-        }public IActionResult Contact()
+        }
+        public IActionResult Contact()
         {
          
             return View();
