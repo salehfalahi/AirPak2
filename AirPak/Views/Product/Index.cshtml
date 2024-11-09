@@ -25,7 +25,7 @@
             </div>
             <footer class="w3-container ">
                 <a class="add-to-cart btn btn-primary" asp-action="Contact" asp-controller="Home">
-                    @* onclick="AddToCart(event);" *@
+                   
                     <span  class="text text-2" aria-hidden="true">با ما تماس بگیرید</span>
                 </a>
             </footer>
@@ -71,9 +71,7 @@
                     <div class="product-description">
                         کیفیت هوای داخل خانه را در کمترین زمان ممکن بهبود بخشید. این صندلی‌ها هوای پاک و سالم را مستقیماً به منطقه تنفسی شما می‌رسانند.
                     </div>
-                    @* <div class="product-available">
-                    <span class="product-extended"><a href="#">Buy Extended Warranty</a></span>
-                    </div> *@
+                
                     <div class="product-rating">
                         <i class="fa fa-star rating" star-data="1"></i>
                         <i class="fa fa-star rating" star-data="2"></i>
@@ -83,9 +81,7 @@
                         <div class="product-rating-details">(3.1 - <span class="rating-count">1203</span> reviews)
                         </div>
 
-                        @* <div class="product-rating-details">
-                        (3.1 - <span class="rating-count">1203</span> reviews)
-                        </div> *@
+                        
 
                     </div>
                     <div class="product-quantity">
@@ -122,10 +118,10 @@
 </section>
 @section Scripts{
     <script>
-        // Get the modal
+      
         var modal = document.getElementById('id01');
 
-        // When the user clicks anywhere outside of the modal, close it
+    
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -135,7 +131,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script>
-        //Go Back
+
         function OpenProduct(i) {
             var i = $('.product-image[item-data="' + i + '"] img');
             var lbi = $('.lightbox-blanket .product-image img');
@@ -148,8 +144,6 @@
 
         }
 
-
-        //Calculate new total when the quantity changes.
             function CalcPrice(qty) {
                 var price = parseFloat($(".product-price").attr("price-data"));
                 var total = (price * qty).toFixed(0); // یک رقم اعشاری بدون گرد کردن
@@ -158,20 +152,19 @@
 
 
 
-        //Reduce quantity by 1 if clicked
         $(document).on("click", ".product-quantity-subtract", function (e) {
             var value = $("#product-quantity-input").val();
-            //console.log(value);
+         
             var newValue = parseInt(value) - 1;
             if (newValue < 0) newValue = 0;
             $("#product-quantity-input").val(newValue);
             CalcPrice(newValue);
         });
 
-        //Increase quantity by 1 if clicked
+       
         $(document).on("click", ".product-quantity-add", function (e) {
             var value = $("#product-quantity-input").val();
-            //console.log(value);
+           
             var newValue = parseInt(value) + 1;
             $("#product-quantity-input").val(newValue);
             CalcPrice(newValue);
@@ -179,7 +172,7 @@
 
         $(document).on("blur", "#product-quantity-input", function (e) {
             var value = $("#product-quantity-input").val();
-            //console.log(value);
+           
             CalcPrice(value);
         });
 
@@ -199,20 +192,5 @@
         }
 
 
-    //     //کلیک
-    //     <script>
-    //         $(document).ready(function () {
-    //             $.ajax({
-    //                 url: '@Url.Action("IncrementViews", "ProductController")',
-    //                 type: 'POST',
-    //                 data: { id: 1 },
-    //                 success: function (response) {
-    //                     console.log('Request sent successfully!');
-    //                 },
-    //                 error: function () {
-    //                     console.log('An error occurred while sending the request!');
-    //                 }
-    //             });
-    //         });
     </script> 
 }

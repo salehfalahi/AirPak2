@@ -1,279 +1,29 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "About";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!-- Main Search Start -->
-<div class="main-search-active">
-    <div class="sidebar-search-icon">
-        <button class="search-close"><i class="pe-7s-close"></i></button>
-    </div>
-    <div class="sidebar-search-input">
-        <form action="#">
-            <div class="form-search">
-                <input id="search" class="input-text" value="" placeholder="" type="search">
-                <button>
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
-        </form>
-        <p class="form-description">برای جستجو enter یا ESC را بزنید تا ببندید</p>
-    </div>
-</div>
-<!-- Main Search End -->
-<!-- Page Title Section Start -->
 
-<div class="page-title-section section section-padding-top" data-overlay="0.7" data-bg-image="/assets/images/bg/concept.jpg">
-    <div class="page-title">
-        <div class="container">
-            <h1 class="title">ما یک شرکت نانو تکنولوژی در ایران هستیم</h1>
-        </div>
-    </div>
-    <div class="page-breadcrumb position-static">
+<div class="main-search-active"><div class="sidebar-search-icon"><button class="search-close"><i class="pe-7s-close"></i></button></div><div class="sidebar-search-input"><form action="#"><div class="form-search"><input id="search" class="input-text" value="" placeholder="" type="search"><button><i class="fa fa-search"></i></button></div></form><p class="form-description">برای جستجو enter یا ESC را بزنید تا ببندید</p></div></div>
+<div class="page-title-section section section-padding-top" data-overlay="0.7" data-bg-image="/assets/images/bg/concept.webp">
+    <div class="page-title"><div class="container"><h1 class="title">ما یک شرکت نانو تکنولوژی در ایران هستیم</h1></div></div><div class="page-breadcrumb position-static">
         <div class="container">
             <ul class="breadcrumb justify-content-center">
-                <li><a asp-controller="Home" asp-action="IndexAsync">صفحه اصلی</a></li>
+                <li><a asp-controller="Home" asp-action="Index">صفحه اصلی</a></li>
+                >
                 <li class="current">درباره ی ما</li>
             </ul>
         </div>
     </div>
 </div>
-<!-- Page Title Section End -->
-<!-- About Section Start -->
-<div class="section section-padding-top section-padding-bottom-150">
-    <div class="container">
-
-        <!-- About Wrapper Start -->
-        <div class="row">
-
-            <!-- About Start -->
-            <div class="col-xl-6 col-lg-6 col-12" data-aos="fade-up">
-                <!-- About Content Area Start -->
-                <div class="about-content-area mt-0 mb-md-10 mb-10">
-                    <!-- Section Title Two Start -->
-                    <div class="section-title-two">
-                        <span class="sub-title">اهداف ما</span>
-                        <h3 class="title">ما به زندگی سالم تر<br> درکنار تکنولوژی نانو فکر میکنیم</h3>
-                    </div>
-                    <!-- Section Title Two End -->
-
-                    <div class="row row-cols-sm-2 row-cols-auto mb-n6">
-                        <!-- Single About Funfuct Start -->
-                        <div class="col mb-6" data-aos="fade-up">
-                            <div class="about-funfact">
-                                <div class="number"><span class="counter">10</span>+</div>
-                                <h6 class="text">رضایت مشتریان</h6>
-                                <p>به شما کمک میکنیم تا با استفاده از محصولات نانو زندگی سالم تری داشته باشید.</p>
-                            </div>
-                        </div>
-                        <!-- Single About Funfuct Start -->
-                        <!-- Single About Funfuct Start -->
-                        <div class="col mb-6" data-aos="fade-up">
-                            <div class="about-funfact">
-                                <div class="number"><span class="counter">13</span>+</div>
-                                <h6 class="text">پروژه های به اتمام رسیده</h6>
-                                <p>اکنون به دنبال ارائه راه حل های آسان برای تصفیه هوای منزل و محل کار شما هستیم.</p>
-                            </div>
-                        </div>
-                        <!-- Single About Funfuct Start -->
-                    </div>
-                </div>
-                <!-- About Content Area Start -->
-            </div>
-            <!-- About Start -->
-            <!-- About Image Area Start -->
-            <div class="col-xl-6 col-lg-6 col-12" data-aos="fade-up">
-                <div class="about-image-area about-shape-animation right-0 mr-0">
-                    <div class="about-image js-tilt">
-                        <img style="max-height:370px;max-width:370px;" src="/assets/images/jpeg-optimizer_world-science-day-research-innovation-elements (2).jpg" alt="">
-                    </div>
-                    <div class="about-image js-tilt">
-                        <img style="max-height:370px;max-width:370px;" src="/assets/images/IMG_۲۰۲۴۱۰۲۹_۱۸۴۴۰۸.jpg" alt="">
-                    </div>
-                    <!-- Animation Shape Start -->
-                    <div class="shape shape-1 scene">
-                        <span data-depth="1"><img src="/assets/images/shape-animation/video-shape-1.png" alt=""></span>
-                    </div>
-                    <!-- Animation Shape End -->
-                </div>
-            </div>
-            <!-- About Image Area Start -->
-
-        </div>
-        <!-- About Wrapper End -->
-
-    </div>
-</div>
-<!-- About Section End -->
-<!-- Video Section Start -->
-@* 
-<div class="video-section section section-padding-150" data-bg-image="/assets/images/bg">
-
-    <div class="container text-center">
-
-        <!-- Section Title Start -->
-        <div class="section-title color-light text-center mb-lg-14 mb-md-8 mb-6" data-aos="fade-up">
-            <h2 class="title"style="text-align:center;">یک شرکت خلاق با خدمات کامل از سال 2024</h2>
-        </div>
-        <!-- Section Title End -->
-        <a href="" class="play-btn icon video-popup"><i class="fas fa-play"></i></a>
-
-    </div>
-
-    <!-- Animation Shape Start -->
-    <div class="shape shape-1 scene">
-        <span data-depth="1">
-            <img src="/assets/images/shape-animation/newsletter-shape.png" alt="">
-        </span>
-    </div> 
-    <!-- Animation Shape End -->
-
-</div>*@
-<!-- Video Section End -->
-<!-- About Section Start -->
-@* <div class="section section-padding-top section-padding-bottom-160">
-    <div class="container">
-
-        <!-- About Wrapper Start -->
-        <div class="row">
-
-            <!-- About Image Area Start -->
-            <div class="col-xl-7 col-lg-6 col-12" data-aos="fade-up">
-                <div class="about-image-area">
-                    <div class="about-image js-tilt">
-                        <img src="assets/images/about/about-3.jpg" alt="">
-                    </div>
-                    <div class="about-image js-tilt">
-                        <img src="assets/images/about/about-4.jpg" alt="">
-                    </div>
-                    <!-- Animation Shape Start -->
-                    <div class="shape shape-1 scene">
-                        <span data-depth="1"><img src="assets/images/shape-animation/about-shape-1.png" alt=""></span>
-                    </div>
-                    <!-- Animation Shape End -->
-                </div>
-            </div>
-            <!-- About Image Area Start -->
-            <!-- About Start -->
-            <div class="col-xl-5 col-lg-6 col-12" data-aos="fade-up">
-                <!-- About Content Area Start -->
-                <div class="about-content-area">
-                    <!-- Section Title Two Start -->
-                    <div class="section-title-two">
-                        <span class="sub-title">Our solutions begin with brand research</span>
-                        <h3 class="title">We’ve worked alongside <br> plenty of brands & startups</h3>
-                    </div>
-                    <!-- Section Title Two End -->
-
-                    <p>Our team of designers and developers are perfectionists who love what they do – we thrive off pushing the boundaries of our clients’ expectations and our own capabilities.</p>
-
-                    <a class="btn btn-primary btn-hover-secondary mt-xl-12 mt-lg-8 mt-md-6 mt-4" href="#">Get Started</a>
-                </div>
-                <!-- About Content Area Start -->
-            </div>
-            <!-- About Start -->
-
-        </div>
-        <!-- About Wrapper End -->
-
-    </div>
-</div>
- *@<!-- About Section End -->
-@* <!-- Testimonial Section Start -->
-<div class="testimonial-section section section-padding-t90 section-padding-bottom" data-bg-color="#f8faff">
-    <div class="container-fluid pl-xl-16 pl-lg-3 pl-md-3 pl-sm-3 pl-3 pr-xl-16 pr-lg-3 pr-md-3 pr-sm-3 pr-3">
-        <!-- Section Title Start -->
-        <div class="section-title text-center" data-aos="fade-up">
-            <h2 class="title fz-32">نظر مشتریانمان در مورد خدمات ما </h2>
-        </div>
-        <!-- Section Title End -->
-        <!--Testimonial Slider Start -->
-        <div class="testimonial-slider swiper-container" data-aos="fade-up">
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                    <!-- Static Testimonial Start -->
-                    <div class="static-testimonial mb-6">
-                        <div class="testimonial-image">
-                            <img src="/assets/images/testimonial/90/author-1.png" alt="">
-                        </div>
-                        <div class="testimonial-content">
-                            <p>....نظر مشتری....</p>
-                        </div>
-                        <div class="author-info">
-                            <div class="cite">
-                                <h6 class="name">نام مشتری</h6>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Static Testimonial End -->
-                </div>
-
-
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        <!--Testimonial Slider End -->
-    </div>
-</div>
-<!-- Testimonial Section End --> *@
-<!-- CTA Section Start -->
+<div class="section section-padding-top section-padding-bottom-150"><div class="container"><div class="row"><div class="col-xl-6 col-lg-6 col-12" data-aos="fade-up"><div class="about-content-area mt-0 mb-md-10 mb-10"><div class="section-title-two"><span class="sub-title">اهداف ما</span><h3 class="title">ما به زندگی سالم تر<br> درکنار تکنولوژی نانو فکر میکنیم</h3></div><div class="row row-cols-sm-2 row-cols-auto mb-n6"><div class="col mb-6" data-aos="fade-up"><div class="about-funfact"><div class="number"><span class="counter">10</span>+</div><h6 class="text">رضایت مشتریان</h6><p>به شما کمک میکنیم تا با استفاده از محصولات نانو زندگی سالم تری داشته باشید.</p></div></div><div class="col mb-6" data-aos="fade-up"><div class="about-funfact"><div class="number"><span class="counter">13</span>+</div><h6 class="text">پروژه های به اتمام رسیده</h6><p>اکنون به دنبال ارائه راه حل های آسان برای تصفیه هوای منزل و محل کار شما هستیم.</p></div></div></div></div></div><div class="col-xl-6 col-lg-6 col-12" data-aos="fade-up"><div class="about-image-area about-shape-animation right-0 mr-0"><div class="about-image js-tilt"><img style="max-height:370px;max-width:370px;" src="/assets/images/jpeg-optimizer_world-science-day-research-innovation-elements (2).jpg" alt=""></div><div class="about-image js-tilt"><img style="max-height:370px;max-width:370px;" src="/assets/images/IMG_۲۰۲۴۱۰۲۹_۱۸۴۴۰۸.webp" alt=""></div><div class="shape shape-1 scene"><span data-depth="1"><img src="/assets/images/shape-animation/video-shape-1.png" alt=""></span></div></div></div></div></div></div>
 <div class="cta-section section section-padding-250">
     <div class="container text-center icon-up-down-animation">
-        <!-- Section Title Start -->
         <div class="section-title text-center" data-aos="fade-up">
-            <h2 class="title fz-34">بیایید در مورد پروژه شما صحبت کنیم و ببینیم چگونه می توانیم با هم کار کنیم</h2>
-            <p class="sub-title">
+            <h2 class="title fz-34">بیایید در مورد پروژه شما صحبت کنیم و ببینیم چگونه می توانیم با هم کار کنیم</h2><p class="sub-title">
                 تیم طراحان، مدیران و خلاقان ما کمال گرا هستند
-               
+
                 <br>  کسانی که کاری را که انجام می دهند دوست دارند و جایی را که کار می کنند دوست دارند
             </p>
-        </div>
-        <!-- Section Title End -->
-        <a class="btn btn-primary btn-hover-secondary" asp-action="Contact" asp-controller="Home">تماس با ما</a>
-
-        <!-- Icon Animation Start -->
-
-        <div class="shape shape-3">
-            <span>
-                <img src="/assets/images/icon-animation/nanotechnology-icon-vector.jpg" alt="">
-            </span>
-        </div>
-        <div class="shape shape-4">
-            <span>
-                <img src="/assets/images/icon-animation/images.png" alt="">
-            </span>
-        </div>
-        <div class="shape shape-5">
-            <span>
-                <img src="/assets/images/icon-animation/images (4).png" alt="">
-            </span>
-        </div>
-        <div class="shape shape-6">
-            <span>
-                <img src="/assets/images/icon-animation/images (3).png" alt="">
-            </span>
-        </div>
-        <div class="shape shape-7">
-            <span>
-                <img src="/assets/images/icon-animation/images (2).png" alt="">
-            </span>
-        </div>
-        <div class="shape shape-8">
-            <span>
-                <img src="/assets/images/icon-animation/images (1).png" alt="">
-            </span>
-        </div>
-        <div class="shape shape-9">
-            <span>
-                <img src="/assets/images/icon-animation/1044769.png" alt="">
-            </span>
-        </div>
-        <!-- Icon Animation End -->
+        </div><a class="btn btn-primary btn-hover-secondary" asp-action="Contact" asp-controller="Home">تماس با ما</a><div class="shape shape-3"><span><img src="/assets/images/icon-animation/nanotechnology-icon-vector.jpg" alt=""></span></div><div class="shape shape-4"><span><img src="/assets/images/icon-animation/images.png" alt=""></span></div><div class="shape shape-5"><span><img src="/assets/images/icon-animation/images (4).png" alt=""></span></div><div class="shape shape-6"><span><img src="/assets/images/icon-animation/images (3).png" alt=""></span></div><div class="shape shape-7"><span><img src="/assets/images/icon-animation/images (2).png" alt=""></span></div><div class="shape shape-8"><span><img src="/assets/images/icon-animation/images (1).png" alt=""></span></div><div class="shape shape-9"><span><img src="/assets/images/icon-animation/1044769.png" alt=""></span></div>
     </div>
 </div>
-<!-- CTA Section End -->
-@section Scripts{
-   
-}
