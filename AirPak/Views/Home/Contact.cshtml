@@ -2,7 +2,7 @@
     ViewData["Title"] = "Contact";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="section section-padding contact-section" data-overlay="0.7" data-bg-image="/assets/images/bg/contact-bg.webp" style="background-image: url(&quot;assets/images/bg/contact-bg.jpg&quot;);">
+<div class="section section-padding contact-section" data-overlay="0.7" data-bg-image="/assets/images/bg/contact-bg.webp" style="background-image: url('/assets/images/bg/contact-bg.webp');">
     <div class="container">
         <div style="  padding-top:2rem;" class="row row-cols-lg-2 row-cols-1 align-items-center">
             <div class="col aos-init aos-animate" data-aos="fade-up">
@@ -22,11 +22,11 @@
                         <h2 class="title fz-28">سریع ترین راه برای ارتباط با ما</h2><p style="direction:rtl;" class="sub-title">
                             ما کاری کرده‌ایم که مشتری‌ها راحت‌تر بتوانند با ما تماس بگیرند و مشکلات‌شان را حل کنند.
                         </p>
-                    </div><form asp-controller="Home" asp-action="CreateMessage" enctype="multipart/form-data" id="contact-form" method="post"><div class="row mb-n4"><div class="col-md-12 col-12 mb-4"><input type="text" placeholder="* نام" name="Name" required></div><div class="col-md-12 col-12 mb-4"><input type="email" placeholder="* ایمیل" name="Email" required></div><div class="col-12 mb-6"><textarea name="Description" placeholder="پیام شما" required></textarea></div><div class="col-12 text-center mb-4"><button type="submit" class="btn btn-primary btn-hover-secondary">ارسال</button></div></div></form><p class="form-messege"></p><div class="shape shape-1 scene" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;"><span data-depth="1" style="transform: translate3d(-14.8px, 10.4px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><img src="/assets/images/shape-animation/contact-shape.png" alt=""></span></div>
+                    </div><form asp-controller="Home" asp-action="CreateMessage" enctype="multipart/form-data" id="contact-form" method="post"><div class="row mb-n4"><div class="col-md-12 col-12 mb-4"><input style="direction:rtl;" type="text" placeholder="* نام" name="Name" required></div><div class="col-md-12 col-12 mb-4"><input style="direction:rtl;" type="email" placeholder="* ایمیل" name="Email" required></div><div class="col-12 mb-6"><textarea style="direction:rtl;" name="Description" placeholder="پیام شما" required></textarea></div><div class="col-12 text-center mb-4"><button type="submit" class="btn btn-primary btn-hover-secondary">ارسال</button></div></div></form><p class="form-messege"></p><div class="shape shape-1 scene" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;"><span data-depth="1" style="transform: translate3d(-14.8px, 10.4px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><img src="~/assets/images/shape-animation/contact-shape.webp" alt=""></span></div>
                 </div>
             </div>
         </div>
-    </div><div class="shape shape-1 scene" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;"><span data-depth="1" style="transform: translate3d(-135.8px, 6.1px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><img src="/assets/images/shape-animation/newsletter-shape.png" alt=""></span></div>
+    </div><div class="shape shape-1 scene" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;"><span data-depth="1" style="transform: translate3d(-135.8px, 6.1px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><img src="~/assets/images/shape-animation/newsletter-shape.webp" alt=""></span></div>
 </div>
 
 
